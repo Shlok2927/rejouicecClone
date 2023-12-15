@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+}
+section#secondPage {
+  position: relative;
+  margin-top: 10vh;
+  width: 100vw;
+  min-height: 100vh;
+  padding-inline: 2.5vw;
+  /* font-family: "rejouice"; */
+  font-size: 1.5vw;
+  font-weight: 300;
+  /* overflow-x: hidden; */
+}
+nav#secondNavigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+div#secondemptyspace {
+  position: absolute;
+  transform: translate(0%, 0.8vh);
+  border-top: 1px solid black;
+  width: 70vw;
+}

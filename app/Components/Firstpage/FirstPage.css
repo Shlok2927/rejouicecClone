@@ -9,7 +9,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-section#first_page {
+section#firstPage {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -33,6 +33,7 @@ div#firstCursor {
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  cursor: default;
 }
 nav#firstNavigation {
   position: fixed;
@@ -59,7 +60,7 @@ div#firstRightNavigation > div#emptyspace {
   transform: translate(0%, 2500%);
   transition: all 0.2s cubic-bezier(0.43, 0.195, 0.02, 1);
 }
-div#firstRightNavigation:hover > div#emptyspace {
+div#firstRightNavigation:hover > div#firstemptyspace {
   width: 100%;
 }
 video {
@@ -87,6 +88,6 @@ span#firstCenterText {
   flex-grow: 10;
   overflow-y: hidden;
   font-family: "rejouice";
-  font-size: 28vw;
+  font-size: 26vw;
   color: white;
 }

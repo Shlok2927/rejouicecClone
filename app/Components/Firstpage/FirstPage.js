@@ -19,15 +19,15 @@ const FirstPage = () => {
     const centerY = innerHeight / 2;
 
     if (cursorX < centerX) {
-      cursorX = cursorX - (centerX - cursorX) / 2;
+      cursorX = cursorX - (centerX - cursorX) / 5;
     } else if (cursorX > centerX) {
-      cursorX = cursorX + (cursorX - centerX) / 2;
+      cursorX = cursorX + (cursorX - centerX) / 5;
     }
 
     if (cursorY < centerY) {
-      cursorY = cursorY - (centerY - cursorY) / 2;
+      cursorY = cursorY - (centerY - cursorY) / 5;
     } else if (cursorY > centerY) {
-      cursorY = cursorY + (cursorY - centerY) / 2;
+      cursorY = cursorY + (cursorY - centerY) / 5;
     }
 
     gsap.to("#firstCursor", {
@@ -38,12 +38,12 @@ const FirstPage = () => {
   return (
     <>
       {/* <section id="first_page" onMouseMove={followMe}> */}
-      <section id="first_page" onMouseMove={followMe}>
+      <section id="firstPage" onMouseMove={followMe}>
         <div id="firstCursor">Play Reel</div>
         <nav id="firstNavigation">
           <span id="firstLeftNavigation">The Venture Agency.</span>
           <div id="firstRightNavigation">
-            <div id="emptyspace"></div>
+            <div id="firstemptyspace"></div>
             <span>Menu</span>
           </div>
         </nav>
