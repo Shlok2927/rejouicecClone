@@ -1,7 +1,90 @@
+@font-face {
+  font-family: "rejouice";
+  src: local("rejouice"),
+    url("../../../fonts/rejouice_font.woff2") format("woff2");
+}
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 section#first_page {
-  background-color: black;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  font-family: "rejouice";
+}
+div#firstCursor {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  background-color: #ff5f38;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+nav#firstNavigation {
+  position: fixed;
+  top: 4vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5vh 2.6vw;
+  font-size: 1.35vw;
+  width: 100%;
+  color: white;
+}
+nav#firstNavigation > :nth-child(1n) {
+  cursor: pointer;
+}
+div#firstRightNavigation {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+div#firstRightNavigation > div#emptyspace {
+  position: absolute;
+  border-top: 1px solid white;
+  width: 0%;
+  transform: translate(0%, 2500%);
+  transition: all 0.2s cubic-bezier(0.43, 0.195, 0.02, 1);
+}
+div#firstRightNavigation:hover > div#emptyspace {
+  width: 100%;
+}
+video {
+  position: absolute;
+  z-index: -1;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+}
+div#firstCenterTextContainer {
+  position: relative;
+  bottom: 5vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: start;
+  height: 34vh;
+  overflow: hidden;
+}
+
+span#firstCenterText {
+  display: flex;
+  align-items: center;
+  height: 33vh;
+  /* height: 17vh; */
+  flex-grow: 10;
+  overflow-y: hidden;
+  font-family: "rejouice";
+  font-size: 28vw;
+  color: white;
 }
