@@ -2,11 +2,9 @@
 import React, { useLayoutEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import "../../../node_modules/locomotive-scroll/dist/locomotive-scroll.css";
 import "./SecondPage.css";
 
-const Secondpage = () => {
-  const count = 0;
+const SecondPage = () => {
   gsap.registerPlugin(ScrollTrigger);
   let animationRestarted = false;
 
@@ -51,7 +49,7 @@ const Secondpage = () => {
     const scrollPosition = window.scrollY;
     console.log(scrollPosition);
     const startPoint = 80;
-    const endPoint = 500;
+    const endPoint = 450;
     if (
       scrollPosition > startPoint &&
       scrollPosition < endPoint &&
@@ -103,4 +101,4 @@ const Secondpage = () => {
   );
 };
 
-export default Secondpage;
+export default SecondPage;

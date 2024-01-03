@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect } from "react";
 import FirstPage from "./Components/Firstpage/FirstPage";
-import Secondpage from "./Components/Secondpage/Secondpage";
-
+import SecondPage from "./Components/Secondpage/Secondpage";
+import ThirdPage from "./Components/Thirdpage/ThirdPage";
 const page = () => {
   useEffect(() => {
     (async () => {
@@ -20,7 +20,8 @@ const page = () => {
   return (
     <>
       <FirstPage />
-      <Secondpage />
+      <SecondPage />
+      <ThirdPage />
     </>
   );
 };
