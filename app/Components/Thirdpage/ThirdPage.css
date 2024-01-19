@@ -49,28 +49,20 @@ div#thirdCenterLink {
 div#thirdCenterLink > span {
   position: relative;
   font-size: 4vw;
-  /* border-bottom: 4px solid black; */
+  padding-bottom: 5px;
+  border-bottom: 4px solid black;
 }
-div#thirdCenterLink:hover div#dotContainer {
+div#thirdCenterLink div#dotContainer {
   position: absolute;
+  left: -100px;
   z-index: 2;
   top: 44%;
-  width: 12%;
   height: 57.3%;
-  transform: translate(-450%, 0) skewX(-20deg);
-  border-block: 15px solid rgb(255, 255, 255);
   transition: all 0.3s linear;
-  animation: haha 0.6s ease-out;
 }
-@keyframes haha {
-  from {
-    border-block: 15px solid rgb(255, 255, 255);
-
-    transform: translate(-440%, 0) skewX(-20deg);
-  }
-  to {
-    border-block: 15px solid rgb(255, 255, 255);
-
-    transform: translate(440%, 0) skewX(20deg);
-  }
+div.animation {
+  width: 15%;
+  animation: slider 1.3s ease-in-out;
+  animation-play-state: running;
+  border-block: 15px solid rgb(255, 255, 255);
 }

@@ -47,9 +47,8 @@ const SecondPage = () => {
 
   const checkScrollAndRestart = () => {
     const scrollPosition = window.scrollY;
-    console.log(scrollPosition);
-    const startPoint = 80;
-    const endPoint = 450;
+    const startPoint = 40;
+    const endPoint = 1350;
     if (
       scrollPosition > startPoint &&
       scrollPosition < endPoint &&
@@ -57,10 +56,8 @@ const SecondPage = () => {
     ) {
       animatedSecond();
       animationRestarted = true;
-      console.log("restarted");
     } else if (scrollPosition <= startPoint || scrollPosition >= endPoint) {
       animationRestarted = false;
-      console.log("hehe");
     }
   };
 
