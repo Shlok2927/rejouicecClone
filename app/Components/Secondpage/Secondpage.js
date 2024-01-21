@@ -48,7 +48,7 @@ const SecondPage = () => {
   const checkScrollAndRestart = () => {
     const scrollPosition = window.scrollY;
     const startPoint = 40;
-    const endPoint = 1350;
+    const endPoint = 1550;
     if (
       scrollPosition > startPoint &&
       scrollPosition < endPoint &&

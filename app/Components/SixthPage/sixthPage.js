@@ -1,22 +1,104 @@
-import React, { useEffect } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import "./sixthPage.css";
 import gsap from "gsap";
+
 const sixthPage = () => {
+  let animationRestarted = true;
   const sizes = [
-    "7%",
-    "6.8%",
-    "7%",
-    "22%",
-    "10%",
+    "24%",
+    "20%",
+    "24%",
+    "70%",
+    "30%",
     "10%",
     "60%",
     "50%",
     "45%",
     "43%",
   ];
-  useEffect(() => {
+
+  let mouseEnter = (value, size) => {
+    gsap.fromTo(
+      value,
+      { y: 15, width: 0 + "%", border: "1px solid white" },
+      {
+        y: 15,
+        width: size,
+        duration: 0.8,
+        scaleX: 1,
+        transformOrigin: "left",
+        border: "1px solid white",
+      }
+    );
+  };
+  let mouseLeave = (value, size) => {
+    gsap.to(value, {
+      width: size,
+      scaleX: 0,
+      transformOrigin: "right",
+      // border: "0px solid black",
+      duration: 0.5,
+      ease: "power2.inOut",
+    });
+  };
+  const animatedSixth = () => {
+    let timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#sixthContainer",
+        start: "-100px 600px",
+        end: "300px center",
+      },
+    });
+    timeline.fromTo(
+      "#sixthContainer",
+      {
+        y: 40,
+      },
+      {
+        y: 0,
+        duration: 0.8,
+      },
+      0
+    );
+    timeline.fromTo(
+      "#sixthContainer span",
+      {
+        opacity: 0,
+        y: 50,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "Power2.easeIn",
+      },
+      1
+    );
+    timeline.to("#sixthBottom span", {
+      y: 120,
+      stagger: 0.1,
+      duration: 1,
+    });
+    ("=-0.5");
+  };
+  const checkScrollAndRestart = () => {
+    const scrollPosition = window.scrollY;
+    const startPoint = 3180;
+    const endPoint = 5000;
+    if (
+      scrollPosition > startPoint &&
+      scrollPosition < endPoint &&
+      !animationRestarted
+    ) {
+      animatedSixth();
+      animationRestarted = true;
+    } else if (scrollPosition <= startPoint || scrollPosition >= endPoint) {
+      animationRestarted = false;
+    }
+  };
+
+  useLayoutEffect(() => {
     let listItems = document.querySelectorAll(".hoverClass");
-    console.log(listItems);
     const handleMouseEnter = (element, index) => {
       return () => {
         mouseEnter(element.previousElementSibling, sizes[index]);
@@ -32,34 +114,12 @@ const sixthPage = () => {
       element.addEventListener("mouseenter", handleMouseEnter(element, index));
       element.addEventListener("mouseleave", handleMouseLeave(element, index));
     });
+    checkScrollAndRestart();
+    window.addEventListener("scroll", checkScrollAndRestart);
+    return () => {
+      window.removeEventListener("scroll", checkScrollAndRestart);
+    };
   }, []);
-
-  let mouseEnter = (value, size) => {
-    gsap.fromTo(
-      value,
-      { y: 20, width: 0 + "%", border: "1px solid white" },
-      {
-        y: 20,
-        width: size,
-        duration: 0.4,
-        scaleX: 1,
-        transformOrigin: "left",
-        border: "1px solid white",
-      }
-    );
-  };
-  let mouseLeave = (value, size) => {
-    gsap.to(value, {
-      width: size,
-      transformOrigin: "50%",
-      border: "0px solid black",
-      duration: 0.5,
-      ease: "power2.inOut",
-    });
-  };
-  let timeline = gsap.timeline("#sixthContainer", {
-    ScrollTrigger,
-  });
   return (
     <>
       <section id="sixthContainer">

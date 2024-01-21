@@ -85,10 +85,14 @@ span#firstCenterText {
   display: flex;
   align-items: center;
   height: 33vh;
-  /* height: 17vh; */
   flex-grow: 10;
   overflow-y: hidden;
   font-family: "rejouice";
-  font-size: 26vw;
+  font-size: 25vw;
   color: white;
+}
+
+span#firstCenterText span {
+  position: relative;
+  top: -150px;
 }

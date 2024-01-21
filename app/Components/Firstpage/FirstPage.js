@@ -33,7 +33,6 @@ const FirstPage = () => {
   };
   return (
     <>
-      {/* <section id="first_page" onMouseMove={followMe}> */}
       <section
         id="firstPage"
         onMouseMove={followMe}
@@ -50,7 +49,16 @@ const FirstPage = () => {
         </nav>
         <video src="videos/demo.mp4" autoPlay muted loop></video>
         <div id="firstCenterTextContainer">
-          <span id="firstCenterText">rejouice</span>
+          <span id="firstCenterText">
+            <span>r</span>
+            <span>e</span>
+            <span>j</span>
+            <span>o</span>
+            <span>u</span>
+            <span>i</span>
+            <span>c</span>
+            <span>e</span>
+          </span>
         </div>
       </section>
     </>
