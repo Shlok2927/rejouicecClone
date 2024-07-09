@@ -1,5 +1,5 @@
 import React, { useLayoutEffect } from "react";
-import "./loader.css";
+import "./Loader.css";
 import gsap from "gsap";
 
 const Loader = () => {
